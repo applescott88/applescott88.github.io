@@ -19,25 +19,39 @@
     h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
     h1 span{color:var(--accent)}
     .sub{font-size:13px;color:#94a3b8;margin-top:4px;font-weight:300}
-    .add-btn{display:flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-family:'Zen Kaku Gothic New',sans-serif;cursor:pointer;text-decoration:none;transition:opacity .2s}
+    
+    /* 調整後的按鈕與標籤 */
+    .add-btn{display:flex;align-items:center;gap:6px;background:var(--accent);color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;cursor:pointer;text-decoration:none;transition:opacity .2s}
     .add-btn:hover{opacity:.85}
     .add-btn svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2}
-    .section-label{padding:1.5rem 2rem .75rem;font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:0 2rem 2rem}
-    .card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.25rem;display:flex;align-items:flex-start;gap:14px;text-decoration:none;color:inherit;transition:all .18s;position:relative}
-    .card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(14,165,233,.1)}
-    .card-favicon{width:40px;height:40px;border-radius:10px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .section-label{padding:1.5rem 2rem .5rem;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#64748b;letter-spacing:1px;display:flex;align-items:center;gap:6px}
+    
+    /* 網格與緊湊型卡片優化 */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;padding:0 2rem 1.5rem}
+    .card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1rem;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;transition:all .15s;position:relative}
+    .card:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(14,165,233,.08)}
+    .card-favicon{width:32px;height:32px;border-radius:8px;background:var(--mist);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
     .card-body{flex:1;min-width:0}
-    .card-name{font-size:14px;font-weight:700;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .card-url{font-size:11px;color:#94a3b8;font-family:'Space Mono',monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}
-    .card-desc{font-size:12px;color:#64748b;font-weight:300;line-height:1.5}
-    .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-text);font-size:10px;padding:2px 8px;border-radius:20px;margin-top:6px;font-family:'Space Mono',monospace}
-    .ext-icon{position:absolute;top:12px;right:14px;width:14px;height:14px;stroke:#cbd5e1;fill:none;stroke-width:2}
-    .empty-state{text-align:center;padding:4rem 2rem;color:#94a3b8}
-    .empty-state .big{font-size:48px;margin-bottom:16px}
-    .empty-state p{font-size:14px;line-height:1.7;font-weight:300}
+    .card-name{font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .card-desc{font-size:11px;color:#64748b;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .ext-icon{width:11px;height:11px;stroke:#cbd5e1;fill:none;stroke-width:2;flex-shrink:0}
+    
+    /* 內建後台彈出視窗樣式 */
+    .admin-modal {display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,46,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
+    .admin-content {background:#fff;padding:25px;border-radius:14px;width:100%;max-width:550px;box-shadow:0 10px 30px rgba(0,0,0,0.2);max-height:90vh;overflow-y:auto}
+    .admin-header {display:flex;justify-content:between;align-items:center;margin-bottom:15px;border-bottom:1px solid var(--border);padding-bottom:10px}
+    .admin-header h3 {font-size:18px}
+    .close-btn {background:none;border:none;font-size:20px;cursor:pointer;color:#94a3b8;float:right}
+    .form-group {margin-bottom:12px}
+    .form-group label {display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:#64748b}
+    .form-group input, .form-group select, .form-group textarea {width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;font-family:inherit}
+    .gen-btn {background:var(--accent);color:#fff;border:none;padding:10px;width:100%;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px}
+    .output-box {margin-top:15px;display:none}
+    .output-box pre {background:#272822;color:#f8f8f2;padding:12px;border-radius:6px;font-size:11px;overflow-x:auto;white-space:pre-wrap;max-height:150px}
+    .copy-btn {background:#34c759;color:#fff;border:none;padding:8px;width:100%;border-radius:6px;cursor:pointer;font-size:12px;margin-top:5px;font-weight:700}
+
     footer{background:var(--white);border-top:1px solid var(--border);padding:1.25rem 2rem;font-family:'Space Mono',monospace;font-size:11px;color:#cbd5e1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.grid{padding:0 1rem 1.5rem}.section-label{padding:1rem 1rem .5rem}footer{padding:1rem}}
+    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.grid{padding:0 .5rem 1.5rem}.section-label{padding:1rem 1rem .3rem}footer{padding:1rem}}
   </style>
 </head>
 <body>
@@ -55,21 +69,19 @@
     <h1>常用<span>連結</span></h1>
     <p class="sub">工具、服務、常訪網站，一站集中管理</p>
   </div>
-  <a href="#" class="add-btn" onclick="alert('請直接編輯 links.html 新增連結')">
+  <button class="add-btn" onclick="openAdmin()">
     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-    新增連結
-  </a>
+    快捷新增連結
+  </button>
 </div>
 
-<div class="section-label">// 搜尋工具</div>
+<div class="section-label">🔍 搜尋與翻譯工具</div>
 <div class="grid">
   <a href="https://www.google.com" target="_blank" class="card">
     <div class="card-favicon">🔍</div>
     <div class="card-body">
       <div class="card-name">Google</div>
-      <div class="card-url">google.com</div>
       <div class="card-desc">全球最大搜尋引擎</div>
-      <span class="tag">搜尋</span>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
@@ -77,23 +89,19 @@
     <div class="card-favicon">🌐</div>
     <div class="card-body">
       <div class="card-name">Google 翻譯</div>
-      <div class="card-url">translate.google.com</div>
       <div class="card-desc">即時多語言翻譯工具</div>
-      <span class="tag">語言</span>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
-</div>
+  </div>
 
-<div class="section-label">// AI 工具</div>
+<div class="section-label">🤖 人工智能 AI</div>
 <div class="grid">
   <a href="https://claude.ai" target="_blank" class="card">
     <div class="card-favicon">🤖</div>
     <div class="card-body">
       <div class="card-name">Claude</div>
-      <div class="card-url">claude.ai</div>
-      <div class="card-desc">Anthropic 的 AI 助理，思考深度優異</div>
-      <span class="tag">AI</span>
+      <div class="card-desc">Anthropic 研發的高階 AI 助理</div>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
@@ -101,23 +109,19 @@
     <div class="card-favicon">💬</div>
     <div class="card-body">
       <div class="card-name">ChatGPT</div>
-      <div class="card-url">chat.openai.com</div>
-      <div class="card-desc">OpenAI 的對話式 AI 助理</div>
-      <span class="tag">AI</span>
+      <div class="card-desc">OpenAI 的對話式 AI 平台</div>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
-</div>
+  </div>
 
-<div class="section-label">// 單車相關</div>
+<div class="section-label">🚴 單車與戶外運動</div>
 <div class="grid">
   <a href="https://www.strava.com" target="_blank" class="card">
     <div class="card-favicon">🚴</div>
     <div class="card-body">
       <div class="card-name">Strava</div>
-      <div class="card-url">strava.com</div>
-      <div class="card-desc">騎行記錄與運動社群平台</div>
-      <span class="tag">單車</span>
+      <div class="card-desc">騎行數據記錄與車友社群</div>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
@@ -125,19 +129,131 @@
     <div class="card-favicon">🗺️</div>
     <div class="card-body">
       <div class="card-name">Komoot</div>
-      <div class="card-url">komoot.com</div>
-      <div class="card-desc">單車路線規劃與地圖導航</div>
-      <span class="tag">單車</span>
+      <div class="card-desc">單車路線規劃與私房探勘</div>
     </div>
     <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
-</div>
+  </div>
 
-<!-- 在下方繼續新增更多分類與連結 -->
+<div id="adminModal" class="admin-modal">
+  <div class="admin-content">
+    <button class="close-btn" onclick="closeAdmin()">&times;</button>
+    <h3 style="margin-bottom:15px; color:var(--ink);">⚡ 快捷新增連結工具</h3>
+    
+    <div class="form-group">
+      <label>1. 選擇要加入的分類（或生成新分類）</label>
+      <select id="targetCategory" onchange="toggleNewCatForm()">
+        <option value="search">🔍 搜尋與翻譯工具</option>
+        <option value="ai">🤖 人工智能 AI</option>
+        <option value="bike">🚴 單車與戶外運動</option>
+        <option value="NEW_CATEGORY">➕ 建立全新分類...</option>
+      </select>
+    </div>
+
+    <div id="newCatForm" class="form-group" style="display:none; background:#f8fafc; padding:10px; border-radius:6px; border:1px dashed #cbd5e1;">
+      <label>新分類圖示與名稱 (例如：💡 數位學習)</label>
+      <input type="text" id="newCatName" placeholder="✨ 輸入新分類名稱">
+    </div>
+    
+    <div class="form-group">
+      <label>2. 網站名稱</label>
+      <input type="text" id="linkName" placeholder="例如：GitHub">
+    </div>
+    
+    <div class="form-group">
+      <label>3. 網站網址 (URL)</label>
+      <input type="text" id="linkUrl" placeholder="https://...">
+    </div>
+    
+    <div class="form-group">
+      <label>4. 網站簡介 (單行小字)</label>
+      <input type="text" id="linkDesc" placeholder="例如：程式碼代管與靜態網頁託管平台">
+    </div>
+
+    <div class="form-group">
+      <label>5. 識別圖示 (Emoji 表情符號)</label>
+      <input type="text" id="linkIcon" value="🔗" style="width:60px; text-align:center;">
+    </div>
+    
+    <button type="button" class="gen-btn" onclick="generateLinkHTML()">產生網頁代碼</button>
+    
+    <div id="outputSection" class="output-box">
+      <label style="color:#34c759; font-weight:700;">↓ 程式碼已生成，請點擊下方按鈕複製：</label>
+      <pre id="htmlOutput"></pre>
+      <button type="button" class="copy-btn" onclick="copyCode()">點此複製代碼</button>
+      <p id="pasteGuide" style="font-size:11px; color:#64748b; margin-top:8px; line-height:1.4;"></p>
+    </div>
+  </div>
+</div>
 
 <footer>
   <span>A Cyclist's Repository · 常用連結</span>
   <span>← <a href="index.html" style="color:#94a3b8;text-decoration:none">返回首頁</a></span>
 </footer>
+
+<script>
+  function openAdmin() { document.getElementById('adminModal').style.display = 'flex'; }
+  function closeAdmin() { document.getElementById('adminModal').style.display = 'none'; }
+  function toggleNewCatForm() {
+    const isNew = document.getElementById('targetCategory').value === 'NEW_CATEGORY';
+    document.getElementById('newCatForm').style.display = isNew ? 'block' : 'none';
+  }
+
+  function generateLinkHTML() {
+    const cat = document.getElementById('targetCategory').value;
+    const name = document.getElementById('linkName').value.trim();
+    const url = document.getElementById('linkUrl').value.trim();
+    const desc = document.getElementById('linkDesc').value.trim();
+    const icon = document.getElementById('linkIcon').value.trim();
+    
+    if(!name || !url) { alert('請填寫網站名稱與網址！'); return; }
+
+    let generatedCode = "";
+    let guideText = "";
+
+    if (cat === 'NEW_CATEGORY') {
+      const newCatName = document.getElementById('newCatName').value.trim();
+      if(!newCatName) { alert('請輸入新分類的名稱！'); return; }
+      
+      generatedCode = `<div class="section-label">${newCatName}</div>
+<div class="grid">
+  <a href="${url}" target="_blank" class="card">
+    <div class="card-favicon">${icon}</div>
+    <div class="card-body">
+      <div class="card-name">${name}</div>
+      <div class="card-desc">${desc}</div>
+    </div>
+    <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+  </a>
+  </div>
+
+`;
+      guideText = "💡 <b>貼上指引：</b>這是全新分類。請在 GitHub 的 index.html 中，找到 <b>[新類別錨點]</b> 那行字，並貼在它的上方即可。";
+    } else {
+      generatedCode = `  <a href="${url}" target="_blank" class="card">
+    <div class="card-favicon">${icon}</div>
+    <div class="card-body">
+      <div class="card-name">${name}</div>
+      <div class="card-desc">${desc}</div>
+    </div>
+    <svg class="ext-icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+  </a>
+`;
+      let anchorNum = cat === 'search' ? '1' : cat === 'ai' ? '2' : '3';
+      guideText = `💡 <b>貼上指引：</b>請在 GitHub 編輯畫面中，尋找帶有 <b>[錨點${anchorNum}]</b> 的中文註解，直接貼在該行字的前一行（或緊接在該分類的卡片後面）。`;
+    }
+
+    document.getElementById('htmlOutput').innerText = generatedCode;
+    document.getElementById('pasteGuide').innerHTML = guideText;
+    document.getElementById('outputSection').style.display = 'block';
+  }
+
+  function copyCode() {
+    const code = document.getElementById('htmlOutput').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert('複製成功！請依下方的指引前往 GitHub 貼上存檔。');
+    });
+  }
+</script>
 </body>
 </html>

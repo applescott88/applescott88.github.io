@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學習筆記 · A Cyclist's Repository</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--ink:#1a1a2e;--mist:#f0f4f8;--white:#fff;--border:#e2e8f0;--accent:#8b5cf6;--accent-bg:#ede9fe;--accent-text:#5b21b6}
+    body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh}
+    header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .back{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;color:#64748b;transition:color .2s}
+    .back:hover{color:var(--accent)}
+    .back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+    .page-title{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--ink)}
+    .hero-bar{background:var(--white);border-bottom:1px solid var(--border);padding:2rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .page-icon{font-size:32px;margin-bottom:8px}
+    h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
+    h1 span{color:var(--accent)}
+    .sub{font-size:13px;color:#94a3b8;margin-top:4px;font-weight:300}
+    .section-label{padding:1.5rem 2rem .75rem;font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
+    .notes-list{display:flex;flex-direction:column;gap:14px;padding:0 2rem 2rem}
+    .note-card{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 14px 14px 0;padding:1.5rem;transition:all .18s}
+    .note-card:hover{box-shadow:0 4px 16px rgba(139,92,246,.1);transform:translateX(3px)}
+    .note-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .note-title{font-size:16px;font-weight:700;color:var(--ink)}
+    .note-date{font-family:'Space Mono',monospace;font-size:10px;color:#94a3b8;white-space:nowrap;margin-top:3px}
+    .note-body{font-size:13px;color:#64748b;line-height:1.8;font-weight:300}
+    .note-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-text);font-size:10px;padding:3px 10px;border-radius:20px;font-family:'Space Mono',monospace}
+    .divider{border:none;border-top:1px dashed var(--border);margin:0 2rem}
+    footer{background:var(--white);border-top:1px solid var(--border);padding:1.25rem 2rem;font-family:'Space Mono',monospace;font-size:11px;color:#cbd5e1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:1rem}
+    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.notes-list{padding:0 1rem 1.5rem}.section-label{padding:1rem 1rem .5rem}footer{padding:1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回首頁
+  </a>
+  <div class="page-title">A Cyclist's Repository</div>
+</header>
+
+<div class="hero-bar">
+  <div>
+    <div class="page-icon">📝</div>
+    <h1>學習<span>筆記</span></h1>
+    <p class="sub">知識整理、學習心得與技能筆記</p>
+  </div>
+</div>
+
+<div class="section-label">// 最新筆記</div>
+<div class="notes-list">
+
+  <div class="note-card">
+    <div class="note-header">
+      <div class="note-title">GitHub Pages 架站完整流程</div>
+      <div class="note-date">2025-01</div>
+    </div>
+    <div class="note-body">
+      使用 GitHub Pages 可以免費架設靜態網站。流程：建立 repository → 命名為 username.github.io → 上傳 index.html → 在 Settings/Pages 啟用部署。網站約 1-2 分鐘後上線，支援自訂網域。
+    </div>
+    <div class="note-tags">
+      <span class="tag">網頁開發</span>
+      <span class="tag">GitHub</span>
+      <span class="tag">工具</span>
+    </div>
+  </div>
+
+  <div class="note-card">
+    <div class="note-header">
+      <div class="note-title">訓練區間心率筆記（Zone 2 訓練）</div>
+      <div class="note-date">2025-01</div>
+    </div>
+    <div class="note-body">
+      Zone 2 定義為最大心率的 60-70%。長時間 Zone 2 騎乘能提升有氧基礎、增加粒線體密度。建議每週 3-4 次、每次 60 分鐘以上。談話測試：能說完整句子但略感喘息即為 Zone 2。
+    </div>
+    <div class="note-tags">
+      <span class="tag">單車訓練</span>
+      <span class="tag">體能</span>
+      <span class="tag">心率</span>
+    </div>
+  </div>
+
+  <!-- 在下方繼續新增筆記 -->
+  <!--
+  <div class="note-card">
+    <div class="note-header">
+      <div class="note-title">筆記標題</div>
+      <div class="note-date">YYYY-MM</div>
+    </div>
+    <div class="note-body">筆記內容...</div>
+    <div class="note-tags"><span class="tag">標籤</span></div>
+  </div>
+  -->
+
+</div>
+
+<footer>
+  <span>A Cyclist's Repository · 學習筆記</span>
+  <span>← <a href="index.html" style="color:#94a3b8;text-decoration:none">返回首頁</a></span>
+</footer>
+</body>
+</html>

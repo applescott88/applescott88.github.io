@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生活智慧 · A Cyclist's Repository</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--ink:#1a1a2e;--mist:#f0f4f8;--white:#fff;--border:#e2e8f0;--accent:#06b6d4;--accent-bg:#cffafe;--accent-text:#155e75}
+    body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh}
+    header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .back{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;color:#64748b;transition:color .2s}
+    .back:hover{color:var(--accent)}
+    .back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+    .page-title{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--ink)}
+    .hero-bar{background:var(--white);border-bottom:1px solid var(--border);padding:2rem}
+    .page-icon{font-size:32px;margin-bottom:8px}
+    h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
+    h1 span{color:var(--accent)}
+    .sub{font-size:13px;color:#94a3b8;margin-top:4px;font-weight:300}
+    .section-label{padding:1.5rem 2rem .75rem;font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
+    .quotes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;padding:0 2rem 2rem}
+    .quote-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:all .18s}
+    .quote-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,182,212,.1)}
+    .quote-mark{position:absolute;top:12px;right:16px;font-size:48px;color:var(--accent-bg);font-family:serif;line-height:1;pointer-events:none}
+    .quote-text{font-size:15px;line-height:1.8;color:var(--ink);font-weight:300;position:relative;margin-bottom:14px}
+    .quote-source{font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;padding-top:10px;border-top:1px solid var(--border)}
+    .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-text);font-size:10px;padding:3px 10px;border-radius:20px;font-family:'Space Mono',monospace;margin-top:10px}
+    .tips-list{display:flex;flex-direction:column;gap:12px;padding:0 2rem 2rem}
+    .tip{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;transition:all .18s}
+    .tip:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(6,182,212,.08)}
+    .tip-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .tip-body{flex:1}
+    .tip-title{font-size:14px;font-weight:700;margin-bottom:4px}
+    .tip-desc{font-size:13px;color:#64748b;line-height:1.7;font-weight:300}
+    footer{background:var(--white);border-top:1px solid var(--border);padding:1.25rem 2rem;font-family:'Space Mono',monospace;font-size:11px;color:#cbd5e1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:1rem}
+    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.quotes-grid{padding:0 1rem 1.5rem;grid-template-columns:1fr}.tips-list{padding:0 1rem 1.5rem}.section-label{padding:1rem 1rem .5rem}footer{padding:1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回首頁
+  </a>
+  <div class="page-title">A Cyclist's Repository</div>
+</header>
+
+<div class="hero-bar">
+  <div class="page-icon">💡</div>
+  <h1>生活<span>智慧</span></h1>
+  <p class="sub">日常小訣竅、人生體悟與靈感收藏</p>
+</div>
+
+<div class="section-label">// 喜歡的句子</div>
+<div class="quotes-grid">
+
+  <div class="quote-card">
+    <div class="quote-mark">"</div>
+    <div class="quote-text">你不需要更多動力，你需要更少阻力。讓好習慣變得顯而易見、有吸引力、容易執行、令人滿足。</div>
+    <div class="quote-source">— James Clear，原子習慣</div>
+    <span class="tag">習慣</span>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-mark">"</div>
+    <div class="quote-text">騎車教會我一件事：山不會因為你累了就變矮，但你可以因為夠強而讓山變小。</div>
+    <div class="quote-source">— 個人體悟</div>
+    <span class="tag">單車</span>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-mark">"</div>
+    <div class="quote-text">複利是世界第八大奇蹟。不理解它的人支付它，理解它的人賺取它。</div>
+    <div class="quote-source">— 愛因斯坦（據傳）</div>
+    <span class="tag">理財</span>
+  </div>
+
+  <!-- 複製 .quote-card 新增喜歡的句子 -->
+
+</div>
+
+<div class="section-label">// 生活訣竅</div>
+<div class="tips-list">
+
+  <div class="tip">
+    <div class="tip-icon">🌅</div>
+    <div class="tip-body">
+      <div class="tip-title">晨間騎車的儀式感</div>
+      <div class="tip-desc">前一晚備好車衣、確認胎壓、裝好水壺，早上起來不用思考直接出門。降低啟動阻力，執行率大幅提升。</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">📱</div>
+    <div class="tip-body">
+      <div class="tip-title">數位減法：刪除而非管理</div>
+      <div class="tip-desc">與其花時間管理通知，不如直接刪除讓你分心的 App。騎車時不帶耳機的那段時間，腦袋反而最清醒。</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">😴</div>
+    <div class="tip-body">
+      <div class="tip-title">睡眠是最好的恢復</div>
+      <div class="tip-desc">訓練後的恢復 70% 靠睡眠。固定就寢時間比睡眠時長更重要，讓身體形成生理時鐘。睡前 1 小時離開螢幕。</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-icon">🍽️</div>
+    <div class="tip-body">
+      <div class="tip-title">備料日策略</div>
+      <div class="tip-desc">每週日準備 3-4 天的食材，水煮雞胸、備好米飯、切好蔬菜。平日吃得好不靠意志力，靠環境設計。</div>
+    </div>
+  </div>
+
+  <!-- 繼續新增生活訣竅 -->
+
+</div>
+
+<footer>
+  <span>A Cyclist's Repository · 生活智慧</span>
+  <span>← <a href="index.html" style="color:#94a3b8;text-decoration:none">返回首頁</a></span>
+</footer>
+</body>
+</html>

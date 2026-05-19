@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>書單影單 · A Cyclist's Repository</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--ink:#1a1a2e;--mist:#f0f4f8;--white:#fff;--border:#e2e8f0;--accent:#ec4899;--accent-bg:#fce7f3;--accent-text:#9d174d}
+    body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh}
+    header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .back{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;color:#64748b;transition:color .2s}
+    .back:hover{color:var(--accent)}
+    .back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+    .page-title{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--ink)}
+    .hero-bar{background:var(--white);border-bottom:1px solid var(--border);padding:2rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .page-icon{font-size:32px;margin-bottom:8px}
+    h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
+    h1 span{color:var(--accent)}
+    .sub{font-size:13px;color:#94a3b8;margin-top:4px;font-weight:300}
+    .filter-row{display:flex;gap:8px;flex-wrap:wrap}
+    .filter-btn{border:1px solid var(--border);background:var(--white);color:#64748b;font-size:12px;padding:6px 14px;border-radius:20px;cursor:pointer;font-family:'Zen Kaku Gothic New',monospace;transition:all .15s}
+    .filter-btn.active,.filter-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .section-label{padding:1.5rem 2rem .75rem;font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;padding:0 2rem 2rem}
+    .card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .18s}
+    .card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(236,72,153,.1)}
+    .card-cover{height:80px;display:flex;align-items:center;justify-content:center;font-size:40px;position:relative}
+    .book-cover{background:linear-gradient(135deg,#fce7f3,#fbcfe8)}
+    .film-cover{background:linear-gradient(135deg,#e0e7ff,#c7d2fe)}
+    .pod-cover{background:linear-gradient(135deg,#d1fae5,#a7f3d0)}
+    .type-badge{position:absolute;top:10px;right:10px;font-size:10px;padding:3px 8px;border-radius:20px;font-family:'Space Mono',monospace;font-weight:700}
+    .badge-book{background:#fce7f3;color:#9d174d}
+    .badge-film{background:#e0e7ff;color:#3730a3}
+    .badge-pod{background:#d1fae5;color:#065f46}
+    .card-body{padding:1rem}
+    .card-title{font-size:14px;font-weight:700;margin-bottom:3px;line-height:1.3}
+    .card-author{font-size:11px;color:#94a3b8;font-family:'Space Mono',monospace;margin-bottom:8px}
+    .card-note{font-size:12px;color:#64748b;line-height:1.6;font-weight:300}
+    .stars{color:var(--accent);font-size:12px;margin-top:8px}
+    .status{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;margin-top:6px;font-family:'Space Mono',monospace}
+    .done{background:#d1fae5;color:#065f46}
+    .reading{background:#fef3c7;color:#92400e}
+    .want{background:#e0e7ff;color:#3730a3}
+    footer{background:var(--white);border-top:1px solid var(--border);padding:1.25rem 2rem;font-family:'Space Mono',monospace;font-size:11px;color:#cbd5e1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.grid{padding:0 1rem 1.5rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}.section-label{padding:1rem 1rem .5rem}footer{padding:1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回首頁
+  </a>
+  <div class="page-title">A Cyclist's Repository</div>
+</header>
+
+<div class="hero-bar">
+  <div>
+    <div class="page-icon">📚</div>
+    <h1>書單<span>影單</span></h1>
+    <p class="sub">讀過看過、值得推薦的書籍、電影與 Podcast</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active">全部</button>
+    <button class="filter-btn">📖 書</button>
+    <button class="filter-btn">🎬 影</button>
+    <button class="filter-btn">🎙️ Podcast</button>
+  </div>
+</div>
+
+<div class="section-label">// 近期收藏</div>
+<div class="grid">
+
+  <div class="card">
+    <div class="card-cover book-cover">📖<span class="type-badge badge-book">書</span></div>
+    <div class="card-body">
+      <div class="card-title">原子習慣</div>
+      <div class="card-author">James Clear</div>
+      <div class="card-note">微小改變帶來巨大成果，訓練與生活習慣建立的聖經。</div>
+      <div class="stars">★★★★★</div>
+      <span class="status done">已讀完</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-cover film-cover">🎬<span class="type-badge badge-film">影</span></div>
+    <div class="card-body">
+      <div class="card-title">The Rider</div>
+      <div class="card-author">Chloé Zhao · 2017</div>
+      <div class="card-note">騎士傷後重返人生的故事，運動員與身份認同的哲思。</div>
+      <div class="stars">★★★★★</div>
+      <span class="status done">已看完</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-cover book-cover">📖<span class="type-badge badge-book">書</span></div>
+    <div class="card-body">
+      <div class="card-title">心流</div>
+      <div class="card-author">Mihaly Csikszentmihalyi</div>
+      <div class="card-note">騎車進入忘我狀態時的那種感覺，這本書給了解釋。</div>
+      <div class="stars">★★★★☆</div>
+      <span class="status reading">閱讀中</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-cover pod-cover">🎙️<span class="type-badge badge-pod">Pod</span></div>
+    <div class="card-body">
+      <div class="card-title">科技島讀</div>
+      <div class="card-author">Packhacker</div>
+      <div class="card-note">台灣科技新聞深度解析，每集 15-20 分鐘，騎車時的好夥伴。</div>
+      <div class="stars">★★★★★</div>
+      <span class="status done">訂閱中</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-cover book-cover">📖<span class="type-badge badge-book">書</span></div>
+    <div class="card-body">
+      <div class="card-title">待讀書目一</div>
+      <div class="card-author">作者名</div>
+      <div class="card-note">在這裡填入你想讀的書的簡介與推薦原因。</div>
+      <div class="stars">─ ─ ─ ─ ─</div>
+      <span class="status want">待閱讀</span>
+    </div>
+  </div>
+
+  <!-- 複製 .card 區塊繼續新增 -->
+
+</div>
+
+<footer>
+  <span>A Cyclist's Repository · 書單影單</span>
+  <span>← <a href="index.html" style="color:#94a3b8;text-decoration:none">返回首頁</a></span>
+</footer>
+</body>
+</html>

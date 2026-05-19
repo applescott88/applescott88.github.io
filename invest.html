@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投資理財 · A Cyclist's Repository</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--ink:#1a1a2e;--mist:#f0f4f8;--white:#fff;--border:#e2e8f0;--accent:#10b981;--accent-bg:#d1fae5;--accent-text:#065f46;--red:#ef4444;--red-bg:#fee2e2}
+    body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh}
+    header{background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .back{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Space Mono',monospace;font-size:12px;color:#64748b;transition:color .2s}
+    .back:hover{color:var(--accent)}
+    .back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+    .page-title{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--ink)}
+    .hero-bar{background:var(--white);border-bottom:1px solid var(--border);padding:2rem}
+    .page-icon{font-size:32px;margin-bottom:8px}
+    h1{font-size:24px;font-weight:700;letter-spacing:-.3px}
+    h1 span{color:var(--accent)}
+    .sub{font-size:13px;color:#94a3b8;margin-top:4px;font-weight:300}
+    .warning{margin-top:12px;background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:10px 14px;font-size:12px;color:#78350f;display:flex;gap:8px;align-items:flex-start}
+    .warning svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
+    .section-label{padding:1.5rem 2rem .75rem;font-family:'Space Mono',monospace;font-size:11px;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;padding:0 2rem 1.5rem}
+    .stat-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1rem}
+    .stat-label{font-size:11px;color:#94a3b8;font-family:'Space Mono',monospace;margin-bottom:6px}
+    .stat-value{font-size:22px;font-weight:700;color:var(--ink);font-family:'Space Mono',monospace}
+    .stat-value.up{color:var(--accent)}
+    .stat-value.down{color:var(--red)}
+    .stat-note{font-size:10px;color:#94a3b8;margin-top:4px}
+    .notes-list{display:flex;flex-direction:column;gap:14px;padding:0 2rem 2rem}
+    .note-card{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 14px 14px 0;padding:1.5rem;transition:all .18s}
+    .note-card:hover{box-shadow:0 4px 16px rgba(16,185,129,.1);transform:translateX(3px)}
+    .note-card.principle{border-left-color:#8b5cf6}
+    .note-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .note-title{font-size:16px;font-weight:700;color:var(--ink)}
+    .note-date{font-family:'Space Mono',monospace;font-size:10px;color:#94a3b8;white-space:nowrap;margin-top:3px}
+    .note-body{font-size:13px;color:#64748b;line-height:1.8;font-weight:300}
+    .note-body strong{font-weight:700;color:var(--ink)}
+    .note-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .tag{display:inline-block;background:var(--accent-bg);color:var(--accent-text);font-size:10px;padding:3px 10px;border-radius:20px;font-family:'Space Mono',monospace}
+    .tag-purple{background:#ede9fe;color:#5b21b6}
+    footer{background:var(--white);border-top:1px solid var(--border);padding:1.25rem 2rem;font-family:'Space Mono',monospace;font-size:11px;color:#cbd5e1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:1rem}
+    @media(max-width:600px){header{padding:0 1rem}.hero-bar{padding:1.5rem 1rem}.stats-row{padding:0 1rem 1rem}.notes-list{padding:0 1rem 1.5rem}.section-label{padding:1rem 1rem .5rem}footer{padding:1rem}}
+  </style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="back">
+    <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    返回首頁
+  </a>
+  <div class="page-title">A Cyclist's Repository</div>
+</header>
+
+<div class="hero-bar">
+  <div class="page-icon">📈</div>
+  <h1>投資<span>理財</span></h1>
+  <p class="sub">財務筆記、資產配置策略與投資心得</p>
+  <div class="warning">
+    <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    本頁內容僅為個人筆記與心得記錄，不構成任何投資建議。投資有風險，請自行判斷。
+  </div>
+</div>
+
+<div class="section-label">// 資產概況（自行更新）</div>
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-label">股票配置</div>
+    <div class="stat-value">60%</div>
+    <div class="stat-note">ETF 為主</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">債券配置</div>
+    <div class="stat-value">20%</div>
+    <div class="stat-note">美債 + 投資級</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">現金部位</div>
+    <div class="stat-value">15%</div>
+    <div class="stat-note">機動調整</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">其他</div>
+    <div class="stat-value">5%</div>
+    <div class="stat-note">黃金 / REITs</div>
+  </div>
+</div>
+
+<div class="section-label">// 投資原則</div>
+<div class="notes-list">
+
+  <div class="note-card principle">
+    <div class="note-header">
+      <div class="note-title">核心投資原則</div>
+      <div class="note-date">長期持有</div>
+    </div>
+    <div class="note-body">
+      <strong>1. 長期主義：</strong>投資期間 10 年以上，不因短期波動操作。<br>
+      <strong>2. 低成本：</strong>優先選擇 expense ratio 低於 0.2% 的 ETF。<br>
+      <strong>3. 分散配置：</strong>不押單一股票，以指數型基金為主。<br>
+      <strong>4. 定期定額：</strong>每月固定投入，平滑進場成本。<br>
+      <strong>5. 不看盤：</strong>設好策略後就少看，像騎 Zone 2 一樣穩定執行。
+    </div>
+    <div class="note-tags">
+      <span class="tag tag-purple">原則</span>
+      <span class="tag tag-purple">長期</span>
+    </div>
+  </div>
+
+  <div class="note-card">
+    <div class="note-header">
+      <div class="note-title">ETF 配置筆記：VT vs VOO vs 0050</div>
+      <div class="note-date">2025-01</div>
+    </div>
+    <div class="note-body">
+      VT（Vanguard Total World）涵蓋全球股市，分散最廣。VOO 追蹤 S&P500，長期績效優異但集中美股。台灣投資人可搭配 0050（台灣 50）降低匯率成本。個人策略：VOO 50% + VT 30% + 0050 20%。
+    </div>
+    <div class="note-tags">
+      <span class="tag">ETF</span>
+      <span class="tag">配置</span>
+    </div>
+  </div>
+
+  <div class="note-card">
+    <div class="note-header">
+      <div class="note-title">緊急備用金規劃</div>
+      <div class="note-date">2025-01</div>
+    </div>
+    <div class="note-body">
+      先建立 6 個月生活費的緊急備用金，存放於高利活存或貨幣市場基金。這筆錢不算入投資部位，確保市場下跌時不需被迫賣股。
+    </div>
+    <div class="note-tags">
+      <span class="tag">現金流</span>
+      <span class="tag">風險管理</span>
+    </div>
+  </div>
+
+  <!-- 繼續新增投資筆記 -->
+
+</div>
+
+<footer>
+  <span>A Cyclist's Repository · 投資理財</span>
+  <span>← <a href="index.html" style="color:#94a3b8;text-decoration:none">返回首頁</a></span>
+</footer>
+</body>
+</html>
